@@ -21,4 +21,5 @@ spec:
             sleep 10
           done
       restartPolicy: Never
+      serviceAccountName: operator-checker
   backoffLimit: 4  
