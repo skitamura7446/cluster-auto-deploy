@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: acs-operator-status-checker
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/hook: Sync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    spec:
+      containers:
+      - name: wait-container
+        image: registry.redhat.io/openshift4/ose-cli:latest 
+        envFrom:
+        - configMapRef:
+            name: acs-operator-checker-config
+        command:
+        - /bin/sh
+        - -c
+        - >
+          while ! oc get csv -n ${NAMESPACE} -l ${OPERATOR_LABEL} | grep Succeeded; do
+            sleep 10
+          done
+      restartPolicy: Never
+      serviceAccountName: operator-checker
+  backoffLimit: 4  

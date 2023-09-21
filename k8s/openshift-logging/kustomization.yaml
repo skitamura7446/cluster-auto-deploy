@@ -18,6 +18,6 @@ resources:
 - loki-operator-status-checker-job.yaml
 - logging-operator-status-checker-job.yaml
 
-# Syncwave: 2
+# PostSync
 - lokistack.yaml
 - cluster-logging.yaml
