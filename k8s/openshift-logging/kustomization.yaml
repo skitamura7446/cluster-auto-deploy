@@ -2,20 +2,22 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
  
 resources:
-# Syncwave: 0
+# Syncwave -1
 - project.yaml
+- operatorgroup.yaml
+
+# Syncwave: 0
 - serviceaccount.yaml
 - logging-operator-checker-configmap.yaml
 - loki-operator-checker-configmap.yaml
 - external-secret.yaml
-- operatorgroup.yaml
 - loki-operator.yaml
 - logging-operator.yaml 
 
 # Syncwave: 1
-- loki-operator-status-checker-job.yaml
-- logging-operator-status-checker-job.yaml
+#- loki-operator-status-checker-job.yaml
+#- logging-operator-status-checker-job.yaml
 
 # Syncwave: 2
-- lokistack.yaml
-- cluster-logging.yaml
+#- lokistack.yaml
+#- cluster-logging.yaml
