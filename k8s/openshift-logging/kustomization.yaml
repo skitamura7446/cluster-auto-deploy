@@ -15,8 +15,8 @@ resources:
 - logging-operator.yaml 
 
 # Syncwave: 1
-#- loki-operator-status-checker-job.yaml
-#- logging-operator-status-checker-job.yaml
+- loki-operator-status-checker-job.yaml
+- logging-operator-status-checker-job.yaml
 
 # Syncwave: 2
 #- lokistack.yaml
