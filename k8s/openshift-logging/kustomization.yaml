@@ -19,5 +19,5 @@ resources:
 - logging-operator-status-checker-job.yaml
 
 # Syncwave: 2
-#- lokistack.yaml
-#- cluster-logging.yaml
+- lokistack.yaml
+- cluster-logging.yaml
