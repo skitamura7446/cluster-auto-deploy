@@ -11,6 +11,8 @@ spec:
     openshift:
       enabled: true
   central:
+    nodeSelector:
+      node-role.kubernetes.io/infra: ''
     exposure:
       loadBalancer:
         enabled: false
@@ -22,6 +24,8 @@ spec:
     telemetry:
       enabled: true
     db:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ''
       isEnabled: Default
       persistence:
         persistentVolumeClaim:
@@ -33,6 +37,8 @@ spec:
     connectivityPolicy: Online
   scanner:
     analyzer:
+      nodeSelector:
+        node-role.kubernetes.io/infra: ''
       scaling:
         autoScaling: Enabled
         maxReplicas: 5
