@@ -11,6 +11,13 @@ spec:
     openshift:
       enabled: true
   central:
+    resources:
+      limits:
+        cpu: '1.5'
+        memory: 4Gi
+      requests:
+        cpu: '4'
+        memory: 8Gi
     nodeSelector:
       node-role.kubernetes.io/infra: ''
     exposure:
@@ -30,6 +37,13 @@ spec:
       persistence:
         persistentVolumeClaim:
           claimName: central-db
+      resources:
+        limits:
+          cpu: '2'
+          memory: 4Gi
+        requests:
+          cpu: '4'
+          memory: 8Gi
     persistence:
       persistentVolumeClaim:
         claimName: stackrox-db
