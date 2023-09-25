@@ -8,8 +8,6 @@ resources:
 
 # Syncwave: 0
 - serviceaccount.yaml
-- logging-operator-checker-configmap.yaml
-- loki-operator-checker-configmap.yaml
 - external-secret.yaml
 - loki-operator.yaml
 - logging-operator.yaml 
@@ -18,6 +16,6 @@ resources:
 - loki-operator-status-checker-job.yaml
 - logging-operator-status-checker-job.yaml
 
-# PostSync
+# Syncwave: 3
 - lokistack.yaml
 - cluster-logging.yaml

@@ -4,7 +4,6 @@ metadata:
   name: logging-operator-status-checker
   annotations:
     argocd.argoproj.io/sync-wave: "1"
-    argocd.argoproj.io/hook: Sync
     argocd.argoproj.io/hook-delete-policy: BeforeHookCreation 
 spec:
   template:
@@ -19,7 +18,7 @@ spec:
         - /bin/sh
         - -c
         - >
-          while ! oc get csv -n ${NAMESPACE} -l ${OPERATOR_LABEL} | grep Succeeded; do
+          while ! oc get csv -n openshift-logging -l operators.coreos.com/cluster-logging.openshift-logging | grep Succeeded; do
             sleep 10
           done
       restartPolicy: Never

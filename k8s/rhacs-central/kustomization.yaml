@@ -7,12 +7,11 @@ resources:
 - operatorgroup.yaml
 
 # Syncwave: 0
-- acs-operator-checker-configmap.yaml
 - subscription.yaml
 - serviceaccount.yaml
 
 # Syncwave: 1
 - acs-operator-status-checker-job.yaml
 
-# PostSync
+# Syncwave: 3
 - central.yaml

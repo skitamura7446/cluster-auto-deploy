@@ -19,7 +19,7 @@ spec:
         - /bin/sh
         - -c
         - >
-          while ! oc get csv -n ${NAMESPACE} -l ${OPERATOR_LABEL} | grep Succeeded; do
+          while ! oc get csv -n rhacs-operator -l operators.coreos.com/rhacs-operator.rhacs-operator | grep Succeeded; do
             sleep 10
           done
       restartPolicy: Never

@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: logging-operator-checker-config
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"
-data:
-  NAMESPACE: openshift-logging
-  OPERATOR_LABEL: operators.coreos.com/cluster-logging.openshift-logging 
