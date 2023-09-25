@@ -14,11 +14,11 @@ spec:
   central:
     resources:
       limits:
-        cpu: '1.5'
-        memory: 4Gi
-      requests:
         cpu: '4'
         memory: 8Gi
+      requests:
+        cpu: '1.5'
+        memory: 4Gi
     nodeSelector:
       node-role.kubernetes.io/infra: ''
     exposure:
@@ -40,11 +40,11 @@ spec:
           claimName: central-db
       resources:
         limits:
-          cpu: '2'
-          memory: 4Gi
-        requests:
           cpu: '4'
           memory: 8Gi
+        requests:
+          cpu: '2'
+          memory: 4Gi
     persistence:
       persistentVolumeClaim:
         claimName: stackrox-db
