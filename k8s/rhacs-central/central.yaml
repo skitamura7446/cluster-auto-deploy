@@ -4,8 +4,9 @@ metadata:
   name: stackrox-central-services
   namespace: stackrox
   annotations:
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "3"
+#    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+#    argocd.argoproj.io/hook: PostSync
 spec:
   monitoring:
     openshift:
