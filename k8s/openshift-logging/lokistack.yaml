@@ -4,9 +4,7 @@ metadata:
   name: logging-loki
   namespace: openshift-logging
   annotations:
-#    argocd.argoproj.io/sync-wave: "2"
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
-    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   managementState: Managed
   size: 1x.extra-small
