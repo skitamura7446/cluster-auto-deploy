@@ -20,10 +20,7 @@ spec:
         - -c
         - >
 #          while ! oc get csv -n rhacs-operator -l operators.coreos.com/rhacs-operator.rhacs-operator | grep Succeeded; do
-          while ! oc get clusterserviceversion -n rhacs-operator \
-            -o jsonpath='{range .items[*]}{.metadata.name} : {.status.phase}{"\n"}{end}'\
-            | grep rhacs-operator \
-            | grep Succeeded
+          while ! oc get clusterserviceversion -n rhacs-operator -o jsonpath='{range .items[*]}{.metadata.name} : {.status.phase}{"\n"}{end}' | grep rhacs-operator | grep Succeeded
           do
             sleep 10
           done
