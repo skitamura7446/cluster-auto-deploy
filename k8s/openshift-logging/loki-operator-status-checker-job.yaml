@@ -15,7 +15,7 @@ spec:
         - /bin/sh
         - -c
         - >
-          while ! oc get clusterserviceversion -n openshift-logging -o jsonpath='{range .items[*]}{.metadata.name} : {.status.phase}{"\n"}{end}'| grep loki-operator | grep Succeeded; do
+          while ! oc get clusterserviceversion -n openshift-operators-redhat -o jsonpath='{range .items[*]}{.metadata.name} : {.status.phase}{"\n"}{end}'| grep loki-operator | grep Succeeded; do
             sleep 10
           done
       restartPolicy: Never
