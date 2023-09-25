@@ -11,16 +11,11 @@ spec:
       containers:
       - name: wait-container
         image: registry.redhat.io/openshift4/ose-cli:latest 
-        envFrom:
-        - configMapRef:
-            name: logging-operator-checker-config
         command:
         - /bin/sh
         - -c
         - >
-#          while ! oc get csv -n openshift-logging -l operators.coreos.com/cluster-logging.openshift-logging | grep Succeeded; do
-          while ! oc get clusterserviceversion -n openshift-logging  -o jsonpath='{range .items[*]}{.metadata.name} : {.status.phase}{"\n"}{end}' | grep loki-operator | grep Succeeded
-          do
+          while ! oc get clusterserviceversion -n openshift-logging  -o jsonpath='{range .items[*]}{.metadata.name} : {.status.phase}{"\n"}{end}' | grep loki-operator | grep Succeeded; do
             sleep 10
           done
       restartPolicy: Never
