@@ -12,9 +12,6 @@ spec:
       containers:
       - name: wait-container
         image: registry.redhat.io/openshift4/ose-cli:latest 
-        envFrom:
-        - configMapRef:
-            name: acs-operator-checker-config
         command:
         - /bin/sh
         - -c
